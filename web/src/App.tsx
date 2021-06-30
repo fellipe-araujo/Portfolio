@@ -1,11 +1,6 @@
-import './styles/global.scss';
+import './styles/global.css';
+import Routes from './Routes';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Portfolio</h1>
-    </div>
-  );
-}
+const App = () => <Routes />;
 
 export default App;
