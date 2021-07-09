@@ -4,7 +4,9 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 0 8rem;
+  padding: 18rem 20rem;
+
+  position: relative;
 
   .home-separator {
     width: 10rem;
@@ -16,9 +18,9 @@ const HomeContainer = styled.div`
 `;
 
 const HomeTitle = styled.h1`
-  /* background: linear-gradient(90deg, #ffffff 0%, #0e1524 50%);
+  background: linear-gradient(90deg, #ffffff 0%, #0e1524 50%);
   -webkit-text-fill-color: transparent;
-  background-clip: text; */
+  -webkit-background-clip: text;
 
   font-size: 5rem;
 `;
@@ -33,6 +35,79 @@ const HomeProjectsList = styled.div`
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+
+  .home-project-link {
+    text-decoration: none;
+  }
 `;
 
-export { HomeContainer, HomeTitle, HomeSubtitle, HomeProjectsList };
+const HomeTechnologies = styled.div`
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .home-techs-box {
+    width: 20rem;
+    height: 13rem;
+  }
+
+  .home-techs-box-icon:nth-child(n + 2) {
+    margin-left: 1rem;
+  }
+
+  .home-techs-box-decription {
+    margin-top: 1rem;
+    text-align: justify;
+  }
+`;
+
+const HomeAboutMe = styled.div`
+  .home-about-me-header {
+    margin: 10rem 0;
+    padding: 0 15rem;
+    
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home-about-me-image {
+    width: 40rem;
+  }
+
+  .home-about-me-text {
+    font-size: 2.4rem;
+    text-align: justify;
+    margin-left: 10rem;
+    /* margin: 2rem 0 5rem 0; */
+  }
+
+  .home-about-me-timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .home-about-me-timeline-item {
+    text-align: justify;
+    margin: 1rem 0;
+  }
+`;
+
+const HomeAchievements = styled.div`
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+`;
+
+export {
+  HomeContainer,
+  HomeTitle,
+  HomeSubtitle,
+  HomeProjectsList,
+  HomeTechnologies,
+  HomeAboutMe,
+  HomeAchievements,
+};
