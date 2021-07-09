@@ -27,6 +27,10 @@ const ProjectContainer = styled.div`
     right: 7rem;
   }
 
+  .project-card-platform-tag-title {
+    color: #fff;
+  }
+
   .project-card-image {
     width: 100%;
     height: 15rem;
@@ -59,6 +63,7 @@ const ProjectContent = styled.div`
   flex-direction: column;
 
   .project-card-title {
+    color: #fff;
     text-align: center;
     margin-top: 1rem;
   }
@@ -71,6 +76,7 @@ const ProjectContent = styled.div`
   }
 
   .project-card-description-text {
+    color: #fff;
     margin-top: 1rem;
     text-align: justify;
   }

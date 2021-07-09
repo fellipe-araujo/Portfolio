@@ -7,7 +7,7 @@ const AchievementContainer = styled.div`
   padding: 1rem;
   background-color: #293245;
 
-  &:nth-child(2) {
+  &:nth-child(n + 2) {
     margin-left: 2rem;
   }
 
