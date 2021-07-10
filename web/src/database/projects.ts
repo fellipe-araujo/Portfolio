@@ -80,7 +80,11 @@ export const projects = {
       id: 6,
       title: 'Delivery',
       coverImage: 'delivery-cover',
-      images: [],
+      images: [
+        { id: 1, pathName: 'web-1.png' },
+        { id: 2, pathName: 'web-2.png' },
+        { id: 3, pathName: 'web-3.png' },
+      ],
       stacks: [
         { id: 1, title: 'React.js', color: '#61DAFB' },
         { id: 2, title: 'React Native', color: '#9B79FC' },
