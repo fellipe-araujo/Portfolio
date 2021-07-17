@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const TimelineItemContainer = styled.div`
   width: 20rem;
-  /* height: 13rem; */
   margin: 1rem 2rem;
   
   position: relative;
@@ -30,10 +29,6 @@ const TimelineItemContainer = styled.div`
     height: .4rem;
     border-radius: 1rem;
     background-color: #61dafb;
-
-    /* position: absolute; */
-    /* left: -.7rem;
-    top: .8rem; */
   }
 
   .item-header-effect-line {
@@ -45,6 +40,14 @@ const TimelineItemContainer = styled.div`
       rgba(155, 121, 252, 0.5),
       rgba(14, 21, 36, 1)
     );
+  }
+
+  @media screen and (max-width: 767px) {
+    align-self: center;
+
+    &:nth-child(n + 2) {
+      margin-top: 2rem;
+    }
   }
 `;
 
