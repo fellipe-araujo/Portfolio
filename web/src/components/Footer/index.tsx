@@ -8,17 +8,19 @@ const Footer = () => {
     <FooterContainer>
       <div className="footer-contact-container">
         <div className="footer-contact-box">
-          <FaPhoneAlt size={24} />
+          <FaPhoneAlt size={20} />
           <h2 className="footer-contact-text">(61) 99142-6597</h2>
         </div>
 
         <div className="footer-contact-box">
-          <MdMail size={24} />
+          <MdMail size={20} />
           <h2 className="footer-contact-text">fellipe.eng.soft@gmail.com</h2>
         </div>
       </div>
 
-      <SocialMedias />
+      <div className="footer-social-medias-container">
+        <SocialMedias />
+      </div>
     </FooterContainer>
   )
 }

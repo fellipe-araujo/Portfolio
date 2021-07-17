@@ -36,6 +36,24 @@ const FooterContainer = styled.div`
     font-size: 2rem;
     font-weight: 400;
   }
+
+  @media screen and (max-width: 767px) {
+    .footer-contact-box:nth-child(2) {
+      margin-top: 1rem;
+    }
+
+    .footer-contact-text {
+      font-size: 1.6rem;
+    }
+
+    .footer-contact-container {
+      flex-direction: column;
+    }
+
+    .footer-social-medias-container {
+      display: none;
+    }
+  }
 `;
 
 export { FooterContainer };
