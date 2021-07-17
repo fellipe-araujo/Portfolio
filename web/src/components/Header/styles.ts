@@ -29,6 +29,14 @@ const HeaderContainer = styled.div`
     font-weight: 400;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 767px) {
+    justify-content: space-around;
+
+    .header-menu {
+      display: none;
+    }
+  }
 `;
 
 export { HeaderContainer };
