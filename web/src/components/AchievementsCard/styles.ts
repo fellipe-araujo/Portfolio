@@ -14,6 +14,10 @@ const AchievementContainer = styled.div`
   .achievements-card-description {
     margin-top: 1rem;
   }
+
+  @media screen and (max-width: 767px) {
+    min-width: 18rem;
+  }
 `;
 
 export { AchievementContainer };
