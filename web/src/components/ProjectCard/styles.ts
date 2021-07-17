@@ -9,10 +9,9 @@ const ProjectContainer = styled.div`
   height: 50rem;
   background: #0e1524;
   box-shadow: 0.1rem 0.1rem 1rem rgba(255, 255, 255, 0.1);
-  margin: 5rem 10rem;
   border-radius: 0.8rem;
-  /* overflow: hidden; */
   cursor: pointer;
+  transition: transform 0.2s;
 
   position: relative;
 
@@ -20,7 +19,7 @@ const ProjectContainer = styled.div`
   flex-direction: column;
 
   &:hover {
-    transform: scale(1.02);
+    transform: scale(1.1);
   }
 
   .project-card-platform-tag + .project-card-platform-tag {
@@ -37,15 +36,23 @@ const ProjectContainer = styled.div`
     border-top-left-radius: 0.8rem;
     border-top-right-radius: 0.8rem;
   }
+
+  @media screen and (max-width: 767px) {
+    margin: 3rem 0;
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
 `;
 
 const PlatformTag = styled.div<PlatformProps>`
   position: absolute;
-  right: .5rem;
+  right: 0.5rem;
   top: -2rem;
 
-  border-radius: .3rem;
-  padding: .3rem .5rem;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
   background-color: ${(props) => props.platform};
   box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
 

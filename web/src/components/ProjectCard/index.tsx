@@ -1,43 +1,34 @@
 import { ProjectContainer, PlatformTag, ProjectContent } from './styles';
 import StackTag from '../StackTag';
-
-interface ProjectCardProps {
-  title: string;
-  image: string;
-  stacks: {
-    id: number;
-    title: string;
-    color: string;
-  }[];
-  description: string;
-  descriptionLength: number;
-  platform: string[];
-}
+import { ProjectProps } from '../../utils/types';
 
 const ProjectCard = ({
   title,
-  image,
+  coverImage,
   stacks,
   description,
   descriptionLength,
   platform,
-}: ProjectCardProps) => {
+}: ProjectProps) => {
   return (
-    <ProjectContainer >
+    <ProjectContainer>
       {platform.map((item) => (
-        <PlatformTag platform={item === 'web' ? '#61DAFB' : '#9B79FC'}>
-          <h2 className="project-card-platform-tag-title">{item}</h2>
+        <PlatformTag
+          key={item.id}
+          platform={item.title === 'web' ? '#61DAFB' : '#9B79FC'}
+        >
+          <h2 className="project-card-platform-tag-title">{item.title}</h2>
         </PlatformTag>
       ))}
 
-      <img className="project-card-image" src={image} alt="Project Logo" />
+      <img className="project-card-image" src={coverImage} alt="Project Logo" />
 
       <ProjectContent>
         <h2 className="project-card-title">{title}</h2>
 
         <div className="project-card-description-content">
           <p className="project-card-description-text">{description}</p>
-          {descriptionLength >= 240 ? <div className="readmore" /> : null}
+          {descriptionLength! >= 240 ? <div className="readmore" /> : null}
         </div>
 
         <div className="project-card-separator" />
