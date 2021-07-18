@@ -8,21 +8,25 @@ const HomeContainer = styled.div`
 
   position: relative;
 
-  .home-separator {
-    width: 10rem;
-    height: 0.5rem;
-    margin: 3rem 0;
-    border-radius: 1rem;
-    background: linear-gradient(90deg, #61dafb 0%, #9b79fc 100%);
+  @media screen and (max-width: 767px) {
+    padding: 10rem 3rem;
   }
 `;
 
 const HomeTitle = styled.h1`
-  background: linear-gradient(90deg, #ffffff 0%, #0e1524 50%);
+  background: linear-gradient(150deg, #ffffff 0%, #39393a 30%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 
   font-size: 5rem;
+
+  @media screen and (max-width: 767px) {
+    background: linear-gradient(150deg, #ffffff 0%, #39393a 70%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+    font-size: 3rem;
+  }
 `;
 
 const HomeSubtitle = styled(HomeTitle)`
@@ -37,7 +41,25 @@ const HomeProjectsList = styled.div`
   flex-wrap: wrap;
 
   .home-project-link {
+    margin: 5rem 10rem;
     text-decoration: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+
+    width: 95%;
+    align-self: center;
+    overflow-x: scroll;
+
+    .home-project-link:nth-child(n + 2) {
+      margin: 5rem 0 5rem 4rem;
+    }
+
+    .home-project-link:nth-child(1) {
+      margin: 5rem 0;
+    }
   }
 `;
 
@@ -59,6 +81,18 @@ const HomeTechnologies = styled.div`
   .home-techs-box-decription {
     margin-top: 1rem;
     text-align: justify;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+
+    .home-techs-box {
+      align-self: center;
+    }
+
+    .home-techs-box:nth-child(n + 2) {
+      margin-top: 2rem;
+    }
   }
 `;
 
@@ -92,6 +126,29 @@ const HomeAboutMe = styled.div`
     text-align: justify;
     margin: 1rem 0;
   }
+
+  @media screen and (max-width: 767px) {
+    .home-about-me-header {
+      margin: 5rem 0 10rem;
+      padding: 0 1rem;
+
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .home-about-me-image {
+      width: 20rem;
+      margin-bottom: 3rem;
+    }
+
+    .home-about-me-text {
+      margin: 0;
+    }
+
+    .home-about-me-timeline {
+      flex-direction: column;
+    }
+  }
 `;
 
 const HomeAchievements = styled.div`
@@ -99,7 +156,12 @@ const HomeAchievements = styled.div`
 
   display: flex;
   flex-direction: row;
-  /* justify-content: space-evenly; */
+
+  @media screen and (max-width: 767px) {
+    width: 95%;
+    align-self: center;
+    overflow-x: scroll;
+  }
 `;
 
 export {

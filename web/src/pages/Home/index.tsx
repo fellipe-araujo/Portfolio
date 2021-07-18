@@ -14,6 +14,7 @@ import { SiPostgresql } from 'react-icons/si';
 import ProjectCard from '../../components/ProjectCard';
 import TimelineItem from '../../components/TimelineItem';
 import AchievementsCard from '../../components/AchievementsCard';
+import Separator from '../../components/Separator';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { projects } from '../../database/projects';
@@ -24,32 +25,33 @@ const Home = () => {
     <HomeContainer>
       <Header />
 
-      <HomeTitle>Welcome To</HomeTitle>
-      <HomeSubtitle>My Personal Portfolio</HomeSubtitle>
+      {/* <HomeTitle>Welcome To</HomeTitle>
+      <HomeSubtitle>My Personal Portfolio</HomeSubtitle> */}
 
-      <div className="home-separator" />
+      <Separator />
 
-      <HomeTitle id="projects">Projects</HomeTitle>
+      <HomeTitle id="projects">Projetos</HomeTitle>
       <HomeProjectsList>
-        {projects.web.map((project) => (
+        {projects.map((item) => (
           <Link
-            key={project.id}
+            key={item.id}
             className="home-project-link"
-            to={`/project/${project.id}`}
+            to={`/project/${item.id}`}
           >
             <ProjectCard
-              title={project.title}
-              image={`projects/${project.coverImage}.png`}
-              stacks={project.stacks}
-              description={project.description}
-              descriptionLength={project.description.length}
-              platform={project.platform}
+              id={item.id}
+              title={item.title}
+              coverImage={`projects/${item.coverImage}.png`}
+              stacks={item.stacks}
+              description={item.description}
+              descriptionLength={item.description.length}
+              platform={item.platform}
             />
           </Link>
         ))}
       </HomeProjectsList>
 
-      <div className="home-separator" />
+      <Separator />
 
       <HomeTitle id="techs">Tecnologias</HomeTitle>
       <HomeTechnologies>
@@ -71,6 +73,7 @@ const Home = () => {
             Experiência com as stacks: React.js e React Native.
           </p>
         </div>
+
         <div className="home-techs-box">
           <div>
             <DiMongodb
@@ -94,6 +97,7 @@ const Home = () => {
             Experiência com Node.js, MongoDB, PostgreSQL, Firebase.
           </p>
         </div>
+
         <div className="home-techs-box">
           <div>
             <FaFigma
@@ -110,7 +114,7 @@ const Home = () => {
         </div>
       </HomeTechnologies>
 
-      <div className="home-separator" />
+      <Separator />
 
       <HomeTitle id="about">Sobre mim</HomeTitle>
       <HomeAboutMe>
@@ -157,7 +161,7 @@ const Home = () => {
         </div>
       </HomeAboutMe>
 
-      <div className="home-separator" />
+      <Separator />
 
       <HomeTitle id="achievements">Realizações pessoais</HomeTitle>
       <HomeAchievements>
