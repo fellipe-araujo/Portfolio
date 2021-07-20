@@ -7,11 +7,10 @@ interface PlatformProps {
 const ProjectContainer = styled.div`
   width: 30rem;
   height: 50rem;
-  background: #0e1524;
-  box-shadow: 0.1rem 0.1rem 1rem rgba(255, 255, 255, 0.1);
+  background: #0A0F1A;
   border-radius: 0.8rem;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.5s;
 
   position: relative;
 
@@ -20,6 +19,7 @@ const ProjectContainer = styled.div`
 
   &:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 2rem rgba(255, 255, 255, 0.1);
   }
 
   .project-card-platform-tag + .project-card-platform-tag {
@@ -38,7 +38,9 @@ const ProjectContainer = styled.div`
   }
 
   @media screen and (max-width: 767px) {
-    margin: 3rem 0;
+    width: 28rem;
+    margin: 3rem 1rem;
+    box-shadow: 0 0 2rem rgba(255, 255, 255, 0.1);
 
     &:hover {
       transform: scale(1);
