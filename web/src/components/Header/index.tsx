@@ -1,11 +1,15 @@
-import { HeaderContainer } from './styles';
+import { HeaderContainer, PortfolioLogo } from './styles';
 import { Link } from 'react-scroll';
+import { VscRootFolderOpened } from 'react-icons/vsc';
 import SocialMedias from '../../components/SocialMedias';
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <h1>Portfolio</h1>
+      <PortfolioLogo>
+        <VscRootFolderOpened size={24} />
+        <h1>Portfolio</h1>
+      </PortfolioLogo>
 
       <div className="header-menu">
         <Link
