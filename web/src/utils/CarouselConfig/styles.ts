@@ -20,7 +20,7 @@ const CustomArrow = styled.div<ArrowProps>`
   height: 3.2rem;
   border-radius: 5rem;
   background-color: ${(props) => props.background};
-  z-index: 1000;
+  z-index: 100;
 
   display: flex;
   align-items: center;

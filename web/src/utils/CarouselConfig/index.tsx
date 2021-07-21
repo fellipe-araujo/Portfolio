@@ -49,3 +49,30 @@ export const settingsMobile = {
   prevArrow: <ArrowPrev color="#9B79FC" />,
   nextArrow: <ArrowNext color="#9B79FC" />,
 };
+
+export const settingsProjects = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  customPaging: () => <CustomPagingDots border="#9B79FC" />,
+  prevArrow: <ArrowPrev color="#9B79FC" />,
+  nextArrow: <ArrowNext color="#9B79FC" />,
+  responsive: [
+    {
+      breakpoint: 1480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 1120,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
