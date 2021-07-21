@@ -81,6 +81,7 @@ const ProjectContent = styled.div`
     max-height: 15rem;
     margin: 2rem 1rem;
     overflow: hidden;
+
     position: relative;
   }
 
@@ -96,7 +97,7 @@ const ProjectContent = styled.div`
     left: 0;
     width: 100%;
     height: 3rem;
-    background-image: linear-gradient(to bottom, transparent, #0e1524);
+    background-image: linear-gradient(to bottom, transparent, #0A0F1A);
   }
 
   .project-card-separator {
