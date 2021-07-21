@@ -35,23 +35,52 @@ const HomeSubtitle = styled(HomeTitle)`
 `;
 
 const HomeProjectsList = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 95%;
+  /* overflow-x: scroll; */
+
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
 
   .home-project-link {
     margin: 5rem 10rem;
     text-decoration: none;
   }
 
+  .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-dots {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .slick-dots li {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .slick-dots .slick-active {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: #9b79fc;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    content: '';
+  }
+
   @media screen and (max-width: 767px) {
     justify-content: flex-start;
     flex-wrap: nowrap;
 
-    width: 95%;
     align-self: center;
-    overflow-x: scroll;
 
     .home-project-link:nth-child(n + 2) {
       margin: 5rem 0 5rem 4rem;
@@ -60,7 +89,18 @@ const HomeProjectsList = styled.div`
     .home-project-link:nth-child(1) {
       margin: 5rem 0;
     }
+
+    .slick-dots {
+      position: absolute;
+      bottom: 0;
+    }
   }
+
+  /* @media screen and (max-width: 1420px) {
+    .home-project-link {
+      margin: 5rem 4rem;
+    }
+  } */
 `;
 
 const HomeTechnologies = styled.div`
@@ -83,7 +123,7 @@ const HomeTechnologies = styled.div`
     text-align: justify;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: column;
 
     .home-techs-box {
@@ -100,7 +140,7 @@ const HomeAboutMe = styled.div`
   .home-about-me-header {
     margin: 10rem 0;
     padding: 0 15rem;
-    
+
     display: flex;
     flex-direction: row;
   }
@@ -127,22 +167,29 @@ const HomeAboutMe = styled.div`
     margin: 1rem 0;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1100px) {
     .home-about-me-header {
       margin: 5rem 0 10rem;
       padding: 0 1rem;
 
       flex-direction: column;
       align-items: center;
+      /* align-self: center; */
     }
-    
+
     .home-about-me-image {
-      width: 20rem;
+      width: 30rem;
       margin-bottom: 3rem;
     }
 
     .home-about-me-text {
       margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .home-about-me-image {
+      width: 20rem;
     }
 
     .home-about-me-timeline {

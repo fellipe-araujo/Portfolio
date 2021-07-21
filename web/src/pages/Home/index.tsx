@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { FaReact, FaNodeJs, FaFigma } from 'react-icons/fa';
 import { DiMongodb } from 'react-icons/di';
 import { SiPostgresql } from 'react-icons/si';
+import Slider from 'react-slick';
 import ProjectCard from '../../components/ProjectCard';
 import TimelineItem from '../../components/TimelineItem';
 import AchievementsCard from '../../components/AchievementsCard';
@@ -19,6 +20,10 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { projects } from '../../database/projects';
 import Person from '../../assets/person.svg';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { settingsProjects } from '../../utils/CarouselConfig';
 
 const Home = () => {
   return (
@@ -32,23 +37,25 @@ const Home = () => {
 
       <HomeTitle id="projects">Projetos</HomeTitle>
       <HomeProjectsList>
-        {projects.map((item) => (
-          <Link
-            key={item.id}
-            className="home-project-link"
-            to={`/project/${item.id}`}
-          >
-            <ProjectCard
-              id={item.id}
-              title={item.title}
-              coverImage={`projects/${item.coverImage}.png`}
-              stacks={item.stacks}
-              description={item.description}
-              descriptionLength={item.description.length}
-              platform={item.platform}
-            />
-          </Link>
-        ))}
+        <Slider {...settingsProjects}>
+          {projects.map((item) => (
+            <Link
+              key={item.id}
+              className="home-project-link"
+              to={`/project/${item.id}`}
+            >
+              <ProjectCard
+                id={item.id}
+                title={item.title}
+                coverImage={`projects/${item.coverImage}.png`}
+                stacks={item.stacks}
+                description={item.description}
+                descriptionLength={item.description.length}
+                platform={item.platform}
+              />
+            </Link>
+          ))}
+        </Slider>
       </HomeProjectsList>
 
       <Separator />
