@@ -9,6 +9,12 @@ const SocialMediasContainer = styled.div`
   .reach-me-icon:nth-child(n + 2) {
     margin-left: 2rem;
   }
+
+  @media screen and (max-width: 767px) {
+    > a svg {
+      width: 2rem;
+    }
+  }
 `;
 
 export { SocialMediasContainer };
