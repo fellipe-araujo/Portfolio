@@ -1,6 +1,34 @@
 export const projects = [
   {
     id: 1,
+    title: 'GoFinances',
+    coverImage: 'gofinances-cover',
+    images: {
+      web: [],
+      mobile: [
+        { id: 1, pathName: 'mobile-1' },
+        { id: 2, pathName: 'mobile-2' },
+        { id: 3, pathName: 'mobile-3' },
+        { id: 4, pathName: 'mobile-4' },
+        { id: 5, pathName: 'mobile-5' },
+        { id: 6, pathName: 'mobile-6' },
+      ],
+    },
+    stacks: [
+      { id: 1, title: 'React Native', color: '#9B79FC' },
+      { id: 2, title: 'Expo', color: '#FFF' },
+      { id: 3, title: 'TypeScript', color: '#3178C6' },
+      { id: 4, title: 'Styled Components', color: '#D66C8E' },
+    ],
+    description:
+      'Gofinances é um aplicativo de finanças pessoais, no qual você pode registrar suas transações e monitorá-las, observado as entradas, saídas, saldo e gastos por categoria e data. É um app perfeito para se organizar!',
+    platform: [{ id: 1, title: 'mobile' }],
+    figma:
+      'https://www.figma.com/file/kIsv1LwumKto1pyiEqHmKQ/GoFinances-Ignite',
+    github: 'https://github.com/fellipe-araujo/ignite-react-native-gofinances',
+  },
+  {
+    id: 2,
     title: 'Letmeask',
     coverImage: 'letmeask-cover',
     images: {
@@ -31,7 +59,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/Letmeask',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Happy',
     coverImage: 'happy-cover',
     images: {
@@ -71,7 +99,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/Happy',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Ecoleta',
     coverImage: 'ecoleta-cover',
     images: {
@@ -104,7 +132,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/Ecoleta',
   },
   {
-    id: 4,
+    id: 5,
     title: 'BeTheHero',
     coverImage: 'bethehero-cover',
     images: {
@@ -136,7 +164,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/BeTheHero',
   },
   {
-    id: 5,
+    id: 6,
     title: 'BigGameSurvey',
     coverImage: 'biggamesurvey-cover',
     images: {
@@ -168,7 +196,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/BigGameSurvey',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Delivery',
     coverImage: 'delivery-cover',
     images: {
