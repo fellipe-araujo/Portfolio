@@ -29,6 +29,29 @@ export const projects = [
   },
   {
     id: 2,
+    title: 'Podcastr',
+    coverImage: 'podcastr-cover',
+    images: {
+      web: [
+        { id: 1, pathName: 'web-1' },
+        { id: 2, pathName: 'web-2' },
+        { id: 3, pathName: 'web-3' },
+      ],
+      mobile: [],
+    },
+    stacks: [
+      { id: 1, title: 'React.js', color: '#61DAFB' },
+      { id: 2, title: 'Next.js', color: '#000' },
+      { id: 3, title: 'TypeScript', color: '#3178C6' },
+    ],
+    description:
+      'O Podcastr é um app para reprodução de episódios em áudio do seu podcast favorito.',
+    platform: [{ id: 1, title: 'web' }],
+    figma: 'https://www.figma.com/file/bFKdDwaSrxwOnn88TNOCyd/Podcastr',
+    github: 'https://github.com/fellipe-araujo/Podcastr',
+  },
+  {
+    id: 3,
     title: 'Letmeask',
     coverImage: 'letmeask-cover',
     images: {
@@ -59,7 +82,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/Letmeask',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Happy',
     coverImage: 'happy-cover',
     images: {
@@ -99,7 +122,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/Happy',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Ecoleta',
     coverImage: 'ecoleta-cover',
     images: {
@@ -132,7 +155,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/Ecoleta',
   },
   {
-    id: 5,
+    id: 6,
     title: 'BeTheHero',
     coverImage: 'bethehero-cover',
     images: {
@@ -164,7 +187,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/BeTheHero',
   },
   {
-    id: 6,
+    id: 7,
     title: 'BigGameSurvey',
     coverImage: 'biggamesurvey-cover',
     images: {
@@ -196,7 +219,7 @@ export const projects = [
     github: 'https://github.com/fellipe-araujo/BigGameSurvey',
   },
   {
-    id: 7,
+    id: 8,
     title: 'Delivery',
     coverImage: 'delivery-cover',
     images: {
