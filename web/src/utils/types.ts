@@ -14,8 +14,7 @@ export interface ProjectProps {
   };
   stacks: {
     id: number;
-    title: string;
-    color: string;
+    pathName: string;
   }[];
   description: string;
   descriptionLength?: number;
