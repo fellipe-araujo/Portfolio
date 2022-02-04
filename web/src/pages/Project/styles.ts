@@ -1,11 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-interface Props {
-  web?: boolean;
-  mobile?: boolean;
-}
-
-const ProjectContainer = styled.div`
+export const Container = styled.div`
   padding: 6rem 13rem 18rem;
 
   position: relative;
@@ -15,98 +10,26 @@ const ProjectContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  .project-title {
-    background: linear-gradient(150deg, #ffffff 2%, #39393a 80%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    align-self: flex-start;
-    font-size: 4rem;
-  }
-
-  .project-description {
-    font-size: 2.4rem;
-    margin: 0 1.4rem 3rem;
-    text-align: justify;
-  }
-
-  .project-subtitle {
-    align-self: flex-start;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-  }
-
-  .project-techs {
-    width: 100%;
-    margin-bottom: 3rem;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .project-link {
-    align-self: flex-start;
-    margin: 0 2rem 3rem;
-    font-size: 2.4rem;
-    color: #e6e6e6;
-  }
-
   @media screen and (max-width: 767px) {
     padding: 3rem 2rem 12rem;
-
-    .project-title {
-      font-size: 3rem;
-    }
-
-    .project-subtitle {
-      font-size: 2.6rem;
-    }
-
-    .project-description,
-    .project-link {
-      font-size: 2.2rem;
-    }
-
-    .project-techs {
-      flex-wrap: wrap;
-    }
   }
 `;
 
-const Platform = styled.div<Props>`
+export const ProjectTitle = styled.h2`
+  background: linear-gradient(150deg, #ffffff 2%, #39393a 80%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   align-self: flex-start;
-  border-radius: 2rem;
-  margin: 3rem 0 3rem 5rem;
-  padding: 0.5rem 1rem;
+  font-size: 4rem;
 
-  ${(props) =>
-    props.web &&
-    css`
-      background-color: #61dafb;
-    `}
-
-  ${(props) =>
-    props.mobile &&
-    css`
-      background-color: #9b79fc;
-    `}
-  
   @media screen and (max-width: 767px) {
-    margin-left: 2rem;
+    font-size: 3rem;
   }
 `;
 
-const Carousel = styled.div<Props>`
+export const Carousel = styled.div`
   width: 70rem;
   margin: 5rem 0;
-
-  .project-carousel-image-web {
-    width: 50rem;
-  }
-
-  .project-carousel-image-mobile {
-    height: 50rem;
-  }
 
   .slick-slide {
     display: flex;
@@ -127,6 +50,7 @@ const Carousel = styled.div<Props>`
     width: 1rem;
     height: 1rem;
     border-radius: 1rem;
+    background-color: ${({ theme }) => theme.colors.main};
   }
 
   .slick-prev:before,
@@ -134,33 +58,67 @@ const Carousel = styled.div<Props>`
     content: '';
   }
 
-  ${(props) =>
-    props.web &&
-    css`
-      .slick-dots .slick-active {
-        background-color: #61dafb;
-      }
-    `}
-
-  ${(props) =>
-    props.mobile &&
-    css`
-      .slick-dots .slick-active {
-        background-color: #9b79fc;
-      }
-    `}
-
   @media screen and (max-width: 767px) {
     width: 80%;
-
-    .project-carousel-image-web {
-      width: 23rem;
-    }
-
-    .project-carousel-image-mobile {
-      height: 38rem;
-    }
   }
 `;
 
-export { ProjectContainer, Platform, Carousel };
+export const ProjectImageWeb = styled.img`
+  width: 50rem;
+
+  @media screen and (max-width: 767px) {
+    width: 23rem;
+  }
+`;
+
+export const ProjectImageMobile = styled.img`
+  height: 50rem;
+
+  @media screen and (max-width: 767px) {
+    height: 38rem;
+  }
+`;
+
+export const ProjectSubTitle = styled.h3`
+  align-self: flex-start;
+  font-size: 3.6rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 767px) {
+    font-size: 2.6rem;
+  }
+`;
+
+export const ProjectDescription = styled.p`
+  font-size: 2rem;
+  margin: 0 1.4rem 3rem;
+  text-align: justify;
+`;
+
+export const ProjectTechs = styled.div`
+  width: 100%;
+  margin-bottom: 3rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+`;
+
+export const ProjectLink = styled.a`
+  align-self: flex-start;
+  margin: 0 2rem 3rem;
+
+  font-size: 2.4rem;
+  color: ${({ theme }) => theme.colors.text_detail};
+
+  cursor: pointer;
+
+  @media screen and (max-width: 767px) {
+    font-size: 2.2rem;
+  }
+`;

@@ -1,5 +1,11 @@
 import { ReactNode } from 'react';
-import { TimelineItemContainer } from './styles';
+import {
+  Container,
+  ItemHeader,
+  ItemYear,
+  ItemHeaderEffect,
+  ItemContent,
+} from './styles';
 
 interface TimelineItemProps {
   year: string;
@@ -8,20 +14,15 @@ interface TimelineItemProps {
 
 const TimelineItem = ({ year, children }: TimelineItemProps) => {
   return (
-    <TimelineItemContainer>
-      <div className="item-header">
-        <h2>{year}</h2>
+    <Container>
+      <ItemHeader>
+        <ItemYear>{year}</ItemYear>
 
-        <div className="item-header-effect">
-          <div className="item-header-effect-circle" />
-          <div className="item-header-effect-line" />
-        </div>
-      </div>
+        <ItemHeaderEffect />
+      </ItemHeader>
 
-      <div className="item-content">
-        {children}
-      </div>
-    </TimelineItemContainer>
+      <ItemContent>{children}</ItemContent>
+    </Container>
   );
 };
 

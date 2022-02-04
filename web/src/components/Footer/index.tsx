@@ -1,28 +1,40 @@
-import { FooterContainer } from './styles';
-import { FaPhoneAlt } from 'react-icons/fa'
-import { MdMail } from 'react-icons/md'
+import { FaPhoneAlt } from 'react-icons/fa';
+import { MdMail } from 'react-icons/md';
+import { useTheme } from 'styled-components';
+
+
 import SocialMedias from '../../components/SocialMedias';
 
+import {
+  Container,
+  ContactContent,
+  ContactBox,
+  ContactText,
+  SocialMediasContent,
+} from './styles';
+
 const Footer = () => {
+  const theme = useTheme();
+
   return (
-    <FooterContainer>
-      <div className="footer-contact-container">
-        <div className="footer-contact-box">
-          <FaPhoneAlt size={20} />
-          <h2 className="footer-contact-text">(61) 99142-6597</h2>
-        </div>
+    <Container>
+      <ContactContent>
+        <ContactBox>
+          <FaPhoneAlt size={20} color={theme.colors.main} />
+          <ContactText>(61) 99142-6597</ContactText>
+        </ContactBox>
 
-        <div className="footer-contact-box">
-          <MdMail size={20} />
-          <h2 className="footer-contact-text">fellipe.eng.soft@gmail.com</h2>
-        </div>
-      </div>
+        <ContactBox>
+          <MdMail size={20} color={theme.colors.main} />
+          <ContactText>fellipe.eng.soft@gmail.com</ContactText>
+        </ContactBox>
+      </ContactContent>
 
-      <div className="footer-social-medias-container">
+      <SocialMediasContent>
         <SocialMedias />
-      </div>
-    </FooterContainer>
-  )
-}
+      </SocialMediasContent>
+    </Container>
+  );
+};
 
 export default Footer;

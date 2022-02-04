@@ -1,36 +1,34 @@
-import { SocialMediasContainer } from './styles';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+
+import { Container, SocialMediaLink } from './styles';
 
 const SocialMedias = () => {
   return (
-    <SocialMediasContainer>
-      <a
-        className="reach-me-icon"
+    <Container>
+      <SocialMediaLink
         href="https://github.com/fellipe-araujo"
         rel="noreferrer"
         target="_blank"
       >
         <FaGithub size={24} />
-      </a>
+      </SocialMediaLink>
 
-      <a
-        className="reach-me-icon"
+      <SocialMediaLink
         href="https://www.linkedin.com/in/fellipearaujo/"
         rel="noreferrer"
         target="_blank"
       >
-        <FaLinkedin className="reach-me-icon" size={24} />
-      </a>
+        <FaLinkedin size={24} />
+      </SocialMediaLink>
 
-      <a
-        className="reach-me-icon"
+      <SocialMediaLink
         href="https://www.instagram.com/_codemore/"
         rel="noreferrer"
         target="_blank"
       >
-        <FaInstagram className="reach-me-icon" size={24} />
-      </a>
-    </SocialMediasContainer>
+        <FaInstagram size={24} />
+      </SocialMediaLink>
+    </Container>
   );
 };
 

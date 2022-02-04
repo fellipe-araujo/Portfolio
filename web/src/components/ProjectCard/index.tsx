@@ -1,6 +1,18 @@
-import { ProjectContainer, PlatformTag, ProjectContent } from './styles';
 import StackTag from '../StackTag';
 import { ProjectProps } from '../../utils/types';
+
+import {
+  Container,
+  PlatformTag,
+  PlatformTitle,
+  ProjectImage,
+  ProjectContent,
+  ProjectTitle,
+  ProjectDescriptionContent,
+  ProjectDescriptionText,
+  ProjectSeparator,
+  ProjectStacksContent,
+} from './styles';
 
 const ProjectCard = ({
   title,
@@ -11,35 +23,32 @@ const ProjectCard = ({
   platform,
 }: ProjectProps) => {
   return (
-    <ProjectContainer>
+    <Container>
       {platform.map((item) => (
-        <PlatformTag
-          key={item.id}
-          platform={item.title === 'web' ? '#61DAFB' : '#9B79FC'}
-        >
-          <h2 className="project-card-platform-tag-title">{item.title}</h2>
+        <PlatformTag key={item.id}>
+          <PlatformTitle>{item.title}</PlatformTitle>
         </PlatformTag>
       ))}
 
-      <img className="project-card-image" src={coverImage} alt="Project Logo" />
+      <ProjectImage src={coverImage} alt="Project Logo" />
 
       <ProjectContent>
-        <h2 className="project-card-title">{title}</h2>
+        <ProjectTitle>{title}</ProjectTitle>
 
-        <div className="project-card-description-content">
-          <p className="project-card-description-text">{description}</p>
-          {descriptionLength! >= 240 ? <div className="readmore" /> : null}
-        </div>
+        <ProjectDescriptionContent>
+          <ProjectDescriptionText>{description}</ProjectDescriptionText>
+          {descriptionLength! >= 160 ? <div className="readmore" /> : null}
+        </ProjectDescriptionContent>
 
-        <div className="project-card-separator" />
+        <ProjectSeparator />
 
-        <div className="project-card-stacks-content">
+        <ProjectStacksContent>
           {stacks.map((stack) => (
-            <StackTag key={stack.id} title={stack.title} color={stack.color} />
+            <StackTag key={stack.id} pathName={stack.pathName} />
           ))}
-        </div>
+        </ProjectStacksContent>
       </ProjectContent>
-    </ProjectContainer>
+    </Container>
   );
 };
 

@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 
-const AchievementContainer = styled.div`
+export const Container = styled.div`
   width: 18rem;
-  height: 10rem;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   padding: 1rem;
-  background-color: #293245;
+  background-color: ${({ theme }) => theme.colors.background_secondary};
 
   &:nth-child(n + 2) {
     margin-left: 2rem;
-  }
-
-  .achievements-card-description {
-    margin-top: 1rem;
   }
 
   @media screen and (max-width: 767px) {
@@ -20,4 +15,11 @@ const AchievementContainer = styled.div`
   }
 `;
 
-export { AchievementContainer };
+export const Title = styled.h2`
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.main};
+`;
+
+export const Description = styled.p`
+  margin-top: 1rem;
+`;

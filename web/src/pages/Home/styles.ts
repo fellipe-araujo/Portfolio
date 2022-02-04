@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const HomeContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -13,12 +13,13 @@ const HomeContainer = styled.div`
   }
 `;
 
-const HomeTitle = styled.h1`
+export const SectionTitle = styled.h2`
   background: linear-gradient(150deg, #ffffff 0%, #39393a 30%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 
-  font-size: 5rem;
+  font-size: 4rem;
+  font-weight: 300;
 
   @media screen and (max-width: 767px) {
     background: linear-gradient(150deg, #ffffff 0%, #39393a 70%);
@@ -29,19 +30,8 @@ const HomeTitle = styled.h1`
   }
 `;
 
-const HomeSubtitle = styled(HomeTitle)`
-  font-size: 4rem;
-  margin-top: 2rem;
-`;
-
-const HomeProjectsList = styled.div`
+export const ProjectsList = styled.div`
   width: 95%;
-  /* overflow-x: scroll; */
-
-  /* display: flex;
-  flex-direction: row; */
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
 
   .home-project-link {
     margin: 5rem 10rem;
@@ -68,7 +58,7 @@ const HomeProjectsList = styled.div`
     width: 1rem;
     height: 1rem;
     border-radius: 1rem;
-    background-color: #9b79fc;
+    background-color: ${({ theme }) => theme.colors.main};
   }
 
   .slick-prev:before,
@@ -95,110 +85,99 @@ const HomeProjectsList = styled.div`
       bottom: 0;
     }
   }
-
-  /* @media screen and (max-width: 1420px) {
-    .home-project-link {
-      margin: 5rem 4rem;
-    }
-  } */
 `;
 
-const HomeTechnologies = styled.div`
-  margin: 5rem 0;
+export const Technologies = styled.div`
+  margin: 3rem 0;
+
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 
-  .home-techs-box {
-    width: 20rem;
-    height: 13rem;
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
   }
+`;
+
+export const TechnologiesBox = styled.div`
+  width: 25rem;
 
   .home-techs-box-icon:nth-child(n + 2) {
     margin-left: 1rem;
   }
 
-  .home-techs-box-decription {
-    margin-top: 1rem;
-    text-align: justify;
-  }
-
   @media screen and (max-width: 1100px) {
-    flex-direction: column;
+    align-self: center;
 
-    .home-techs-box {
-      align-self: center;
-    }
-
-    .home-techs-box:nth-child(n + 2) {
-      margin-top: 2rem;
+    &:nth-child(n + 2) {
+      margin-top: 5rem;
     }
   }
 `;
 
-const HomeAboutMe = styled.div`
-  .home-about-me-header {
-    margin: 10rem 0;
-    padding: 0 15rem;
+export const TechnologiesSectionTitle = styled.h2``;
 
-    display: flex;
-    flex-direction: row;
-  }
+export const TechnologiesSectionDescription = styled.p`
+  margin-top: 1rem;
+`;
 
-  .home-about-me-image {
-    width: 40rem;
-  }
+export const AboutMe = styled.div``;
 
-  .home-about-me-text {
-    font-size: 2.4rem;
-    text-align: justify;
-    margin-left: 10rem;
-    /* margin: 2rem 0 5rem 0; */
-  }
+export const AboutMeHeader = styled.div`
+  margin: 10rem 0;
+  padding: 0 15rem;
 
-  .home-about-me-timeline {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-
-  .home-about-me-timeline-item {
-    text-align: justify;
-    margin: 1rem 0;
-  }
+  display: flex;
+  flex-direction: row;
 
   @media screen and (max-width: 1100px) {
-    .home-about-me-header {
-      margin: 5rem 0 10rem;
-      padding: 0 1rem;
+    margin: 5rem 0;
+    padding: 0 1rem;
 
-      flex-direction: column;
-      align-items: center;
-      /* align-self: center; */
-    }
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
-    .home-about-me-image {
-      width: 30rem;
-      margin-bottom: 3rem;
-    }
+export const AboutMeImage = styled.img`
+  width: 40rem;
 
-    .home-about-me-text {
-      margin: 0;
-    }
+  @media screen and (max-width: 1100px) {
+    width: 30rem;
+    margin-bottom: 3rem;
   }
 
   @media screen and (max-width: 767px) {
-    .home-about-me-image {
-      width: 20rem;
-    }
-
-    .home-about-me-timeline {
-      flex-direction: column;
-    }
+    width: 20rem;
   }
 `;
 
-const HomeAchievements = styled.div`
+export const AboutMeDescription = styled.p`
+  font-size: 2rem;
+  text-align: justify;
+  margin-left: 10rem;
+
+  @media screen and (max-width: 1100px) {
+    margin: 0;
+    text-align: center;
+  }
+`;
+
+export const AboutMeTimeline = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+`;
+
+export const AboutMeTimelineItem = styled.p`
+  margin: 1rem 0;
+`;
+
+export const Achievements = styled.div`
   padding: 2rem 0;
 
   display: flex;
@@ -208,15 +187,7 @@ const HomeAchievements = styled.div`
     width: 95%;
     align-self: center;
     overflow-x: scroll;
+
+    padding-bottom: 5rem;
   }
 `;
-
-export {
-  HomeContainer,
-  HomeTitle,
-  HomeSubtitle,
-  HomeProjectsList,
-  HomeTechnologies,
-  HomeAboutMe,
-  HomeAchievements,
-};

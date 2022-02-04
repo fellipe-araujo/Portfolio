@@ -1,17 +1,25 @@
-import { HeaderContainer, PortfolioLogo } from './styles';
 import { Link } from 'react-scroll';
 import { VscRootFolderOpened } from 'react-icons/vsc';
+
 import SocialMedias from '../../components/SocialMedias';
+
+import {
+  Container,
+  PortfolioLogo,
+  Title,
+  HeaderMenu,
+  HeaderMenuTitle,
+} from './styles';
 
 const Header = () => {
   return (
-    <HeaderContainer>
+    <Container>
       <PortfolioLogo>
         <VscRootFolderOpened size={24} />
-        <h1>Portfolio</h1>
+        <Title>Portfolio</Title>
       </PortfolioLogo>
 
-      <div className="header-menu">
+      <HeaderMenu>
         <Link
           className="header-menu-item"
           to="projects"
@@ -19,7 +27,7 @@ const Header = () => {
           smooth={true}
           offset={-100}
         >
-          <h2 className="header-menu-subtitle">Projetos</h2>
+          <HeaderMenuTitle>Projetos</HeaderMenuTitle>
         </Link>
 
         <Link
@@ -29,7 +37,7 @@ const Header = () => {
           smooth={true}
           offset={-100}
         >
-          <h2 className="header-menu-subtitle">Tecnologias</h2>
+          <HeaderMenuTitle>Tecnologias</HeaderMenuTitle>
         </Link>
 
         <Link
@@ -39,7 +47,7 @@ const Header = () => {
           smooth={true}
           offset={-100}
         >
-          <h2 className="header-menu-subtitle">Sobre mim</h2>
+          <HeaderMenuTitle>Sobre mim</HeaderMenuTitle>
         </Link>
 
         <Link
@@ -49,12 +57,12 @@ const Header = () => {
           smooth={true}
           offset={-100}
         >
-          <h2 className="header-menu-subtitle">Conquistas</h2>
+          <HeaderMenuTitle>Conquistas</HeaderMenuTitle>
         </Link>
-      </div>
+      </HeaderMenu>
 
       <SocialMedias />
-    </HeaderContainer>
+    </Container>
   );
 };
 

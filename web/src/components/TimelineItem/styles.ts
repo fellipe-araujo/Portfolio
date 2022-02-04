@@ -1,46 +1,13 @@
 import styled from 'styled-components';
 
-const TimelineItemContainer = styled.div`
-  width: 20rem;
+export const Container = styled.div`
+  width: 23rem;
   margin: 1rem 2rem;
-  
+
   position: relative;
 
   display: flex;
   flex-direction: column;
-
-  .item-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .item-header-effect {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    position: absolute;
-    right: 0;
-  }
-
-  .item-header-effect-circle {
-    width: .7rem;
-    height: .4rem;
-    border-radius: 1rem;
-    background-color: #61dafb;
-  }
-
-  .item-header-effect-line {
-    width: 10rem;
-    height: 0.2rem;
-    background: linear-gradient(
-      to right,
-      rgba(97, 218, 251, 1),
-      rgba(155, 121, 252, 0.5),
-      rgba(14, 21, 36, 1)
-    );
-  }
 
   @media screen and (max-width: 767px) {
     align-self: center;
@@ -51,4 +18,31 @@ const TimelineItemContainer = styled.div`
   }
 `;
 
-export { TimelineItemContainer };
+export const ItemHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const ItemYear = styled.h2`
+  font-weight: 400;
+`;
+
+export const ItemHeaderEffect = styled.div`
+  width: 10rem;
+  height: 0.4rem;
+
+  background: linear-gradient(to right, #00b37e, #00b37e 5%, #121214);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 0;
+`;
+
+export const ItemContent = styled.p``;

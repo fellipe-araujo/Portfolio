@@ -1,42 +1,55 @@
-import {
-  HomeContainer,
-  HomeTitle,
-  HomeSubtitle,
-  HomeProjectsList,
-  HomeTechnologies,
-  HomeAboutMe,
-  HomeAchievements,
-} from './styles';
 import { Link } from 'react-router-dom';
-import { FaReact, FaNodeJs, FaFigma } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaFigma, FaArrowRight } from 'react-icons/fa';
 import { DiMongodb } from 'react-icons/di';
 import { SiPostgresql } from 'react-icons/si';
+import { useTheme } from 'styled-components';
 import Slider from 'react-slick';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import ProjectCard from '../../components/ProjectCard';
 import TimelineItem from '../../components/TimelineItem';
 import AchievementsCard from '../../components/AchievementsCard';
 import Separator from '../../components/Separator';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Welcome from '../../components/Welcome';
+
 import { projects } from '../../database/projects';
 import Person from '../../assets/person.svg';
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { settingsProjects } from '../../utils/CarouselConfig';
 
+import {
+  Container,
+  SectionTitle,
+  ProjectsList,
+  Technologies,
+  TechnologiesBox,
+  TechnologiesSectionTitle,
+  TechnologiesSectionDescription,
+  AboutMe,
+  AboutMeHeader,
+  AboutMeImage,
+  AboutMeDescription,
+  AboutMeTimeline,
+  AboutMeTimelineItem,
+  Achievements,
+} from './styles';
+
 const Home = () => {
+  const theme = useTheme();
+
   return (
-    <HomeContainer>
+    <Container>
       <Header />
 
-      {/* <HomeTitle>Welcome To</HomeTitle>
-      <HomeSubtitle>My Personal Portfolio</HomeSubtitle> */}
+      <Welcome />
 
       <Separator />
 
-      <HomeTitle id="projects">Projetos</HomeTitle>
-      <HomeProjectsList>
+      <SectionTitle id="projects">Projetos</SectionTitle>
+      <ProjectsList>
         <Slider {...settingsProjects}>
           {projects.map((item) => (
             <Link
@@ -56,14 +69,14 @@ const Home = () => {
             </Link>
           ))}
         </Slider>
-      </HomeProjectsList>
+      </ProjectsList>
 
       <Separator />
 
-      <HomeTitle id="techs">Tecnologias</HomeTitle>
-      <HomeTechnologies>
-        <div className="home-techs-box">
-          <div>
+      <SectionTitle id="techs">Tecnologias</SectionTitle>
+      <Technologies>
+        <TechnologiesBox>
+          <>
             <FaReact
               className="home-techs-box-icon"
               size={20}
@@ -74,15 +87,16 @@ const Home = () => {
               size={20}
               color="#9B79FC"
             />
-          </div>
-          <h2 className="home-techs-box-title">Front-end</h2>
-          <p className="home-techs-box-decription">
-            Experiência com as stacks: React.js e React Native.
-          </p>
-        </div>
+          </>
 
-        <div className="home-techs-box">
-          <div>
+          <TechnologiesSectionTitle>Front-end</TechnologiesSectionTitle>
+          <TechnologiesSectionDescription>
+            Experiência com as tecnologias: React.js e React Native.
+          </TechnologiesSectionDescription>
+        </TechnologiesBox>
+
+        <TechnologiesBox>
+          <>
             <DiMongodb
               className="home-techs-box-icon"
               size={20}
@@ -98,87 +112,113 @@ const Home = () => {
               size={20}
               color="#316192"
             />
-          </div>
-          <h2 className="home-techs-box-title">Back-end</h2>
-          <p className="home-techs-box-decription">
+          </>
+          <TechnologiesSectionTitle>Back-end</TechnologiesSectionTitle>
+          <TechnologiesSectionDescription>
             Experiência com Node.js, MongoDB, PostgreSQL, Firebase.
-          </p>
-        </div>
+          </TechnologiesSectionDescription>
+        </TechnologiesBox>
 
-        <div className="home-techs-box">
-          <div>
-            <FaFigma
-              className="home-techs-box-icon"
-              size={20}
-              color="#EF6C5E"
-            />
-          </div>
-          <h2 className="home-techs-box-title">UI/UX</h2>
-          <p className="home-techs-box-decription">
+        <TechnologiesBox>
+          <FaFigma className="home-techs-box-icon" size={20} color="#EF6C5E" />
+
+          <TechnologiesSectionTitle>UI/UX</TechnologiesSectionTitle>
+          <TechnologiesSectionDescription>
             Experiência com criação de designs e ferramentas para a criação dos
             mesmos, como o Figma.
-          </p>
-        </div>
-      </HomeTechnologies>
+          </TechnologiesSectionDescription>
+        </TechnologiesBox>
+      </Technologies>
 
       <Separator />
 
-      <HomeTitle id="about">Sobre mim</HomeTitle>
-      <HomeAboutMe>
-        <div className="home-about-me-header">
-          <img className="home-about-me-image" src={Person} alt="My profile" />
-          <p className="home-about-me-text">
+      <SectionTitle id="about">Sobre mim</SectionTitle>
+      <AboutMe>
+        <AboutMeHeader>
+          <AboutMeImage src={Person} alt="My profile" />
+          <AboutMeDescription className="home-about-me-text">
             Sou graduando em Engenharia de Software na Universidade de Brasília
             e apaixonado por desenvolvimento web e mobile. Na minha jornada,
             sempre levo comigo uma frase que resume o meu propósito como
             desenvolvedor: "Transformar o mundo e fornecer novas experiências às
             pessoas através da programação."
-          </p>
-        </div>
+          </AboutMeDescription>
+        </AboutMeHeader>
 
-        <div className="home-about-me-timeline">
+        <AboutMeTimeline>
           <TimelineItem year="2018">
-            <p className="home-about-me-timeline-item">
-              &bull; Iniciei minha graduação em Engenharia de Software
-            </p>
+            <AboutMeTimelineItem>
+              <FaArrowRight
+                size={20}
+                color={theme.colors.main}
+                style={{ marginRight: 10 }}
+              />
+              Iniciei minha graduação em Engenharia de Software
+            </AboutMeTimelineItem>
           </TimelineItem>
 
           <TimelineItem year="2019">
-            <p className="home-about-me-timeline-item">
-              &bull; Trainee - Empresa Júnior de Engenharia de Software
-              (Orc'estra Gamificação)
-            </p>
+            <AboutMeTimelineItem>
+              <FaArrowRight
+                size={20}
+                color={theme.colors.main}
+                style={{ marginRight: 10 }}
+              />
+              Empresa Júnior de Engenharia de Software (Orc'estra Gamificação)
+              <br />
+              &emsp; &bull; Trainee
+            </AboutMeTimelineItem>
           </TimelineItem>
 
           <TimelineItem year="2020">
-            <p className="home-about-me-timeline-item">
-              &bull; Assessor de Projetos e Coordenador de Negociações - Empresa
-              Júnior de Engenharia de Software (Orc'estra Gamificação)
-            </p>
+            <AboutMeTimelineItem>
+              <FaArrowRight
+                size={20}
+                color={theme.colors.main}
+                style={{ marginRight: 10 }}
+              />
+              Empresa Júnior de Engenharia de Software (Orc'estra Gamificação)
+              <br />
+              &emsp; &bull; Assessor de Projetos
+              <br />
+              &emsp; &bull; Gerente de Projetos
+              <br />
+              &emsp; &bull; Coordenador de Negociações
+            </AboutMeTimelineItem>
           </TimelineItem>
 
           <TimelineItem year="2021">
-            <p className="home-about-me-timeline-item">
-              &bull; Fundador da CodeMore
-            </p>
-            <p className="home-about-me-timeline-item">
-              &bull; Igniter na Rocketseat - Trilha React Native
-            </p>
+            <AboutMeTimelineItem>
+              <FaArrowRight
+                size={20}
+                color={theme.colors.main}
+                style={{ marginRight: 10 }}
+              />
+              Fundador da CodeMore
+            </AboutMeTimelineItem>
+            <AboutMeTimelineItem>
+              <FaArrowRight
+                size={20}
+                color={theme.colors.main}
+                style={{ marginRight: 10 }}
+              />
+              Igniter na Rocketseat - Trilha React Native
+            </AboutMeTimelineItem>
           </TimelineItem>
-        </div>
-      </HomeAboutMe>
+        </AboutMeTimeline>
+      </AboutMe>
 
       <Separator />
 
-      <HomeTitle id="achievements">Realizações pessoais</HomeTitle>
-      <HomeAchievements>
-        <AchievementsCard title="20+" description="Projetos open source" />
-        <AchievementsCard title="2000+" description="Seguidores InstaCode" />
+      <SectionTitle id="achievements">Realizações pessoais</SectionTitle>
+      <Achievements>
+        <AchievementsCard title="30+" description="Projetos open source" />
+        <AchievementsCard title="3000+" description="Seguidores InstaCode" />
         <AchievementsCard title="8+" description="Deploys de aplicações" />
-      </HomeAchievements>
+      </Achievements>
 
       <Footer />
-    </HomeContainer>
+    </Container>
   );
 };
 

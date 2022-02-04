@@ -2,6 +2,8 @@ import { MouseEventHandler } from 'react';
 import { CustomPagingDots, CustomArrow } from './styles';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
+import theme from '../../styles/theme';
+
 interface ArrowProps {
   className?: string;
   onClick?: MouseEventHandler;
@@ -24,30 +26,15 @@ const ArrowNext = ({ className, onClick, color }: ArrowProps) => {
   );
 };
 
-const settingsGlobal = {
+export const settingsGlobal = {
   dots: true,
   infinite: false,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-};
-
-export const settingsWeb = {
-  ...settingsGlobal,
-  customPaging: () => (
-    <CustomPagingDots border="#61dafb">
-      <div className="fdp" />
-    </CustomPagingDots>
-  ),
-  prevArrow: <ArrowPrev color="#61dafb" />,
-  nextArrow: <ArrowNext color="#61dafb" />,
-};
-
-export const settingsMobile = {
-  ...settingsGlobal,
-  customPaging: () => <CustomPagingDots border="#9B79FC" />,
-  prevArrow: <ArrowPrev color="#9B79FC" />,
-  nextArrow: <ArrowNext color="#9B79FC" />,
+  customPaging: () => <CustomPagingDots border={theme.colors.main} />,
+  prevArrow: <ArrowPrev color={theme.colors.main} />,
+  nextArrow: <ArrowNext color={theme.colors.main} />,
 };
 
 export const settingsProjects = {
@@ -56,9 +43,9 @@ export const settingsProjects = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 3,
-  customPaging: () => <CustomPagingDots border="#9B79FC" />,
-  prevArrow: <ArrowPrev color="#9B79FC" />,
-  nextArrow: <ArrowNext color="#9B79FC" />,
+  customPaging: () => <CustomPagingDots border={theme.colors.main} />,
+  prevArrow: <ArrowPrev color={theme.colors.main} />,
+  nextArrow: <ArrowNext color={theme.colors.main} />,
   responsive: [
     {
       breakpoint: 1480,

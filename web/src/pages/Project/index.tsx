@@ -1,16 +1,29 @@
 import { useState, useEffect } from 'react';
-import { ProjectContainer, Platform, Carousel } from './styles';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
+
 import Footer from '../../components/Footer';
 import StackTag from '../../components/StackTag';
 import Separator from '../../components/Separator';
+
 import { projects } from '../../database/projects';
-import { settingsWeb, settingsMobile } from '../../utils/CarouselConfig';
+import { settingsGlobal } from '../../utils/CarouselConfig';
 import { ProjectProps } from '../../utils/types';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import {
+  Container,
+  ProjectTitle,
+  Carousel,
+  ProjectImageWeb,
+  ProjectImageMobile,
+  ProjectSubTitle,
+  ProjectDescription,
+  ProjectTechs,
+  ProjectLink,
+} from './styles';
 
 interface ParamsProps {
   id: string;
@@ -30,103 +43,81 @@ const Project = () => {
   }, [params.id]);
 
   return (
-    <ProjectContainer>
-      <h1 className="project-title">{project?.title}</h1>
+    <Container>
+      <ProjectTitle>{project?.title}</ProjectTitle>
 
       <Separator />
 
       {projects[parseInt(params.id) - 1].platform.some(
         (item) => item.title === 'web'
       ) ? (
-        <>
-          <Platform web>
-            <h2 className="project-platform-title">
-              web - {project?.images?.web.length} imagens
-            </h2>
-          </Platform>
-
-          <Carousel web>
-            <Slider {...settingsWeb}>
-              {project?.images!.web.map((image) => (
-                <div key={image.id} className="project-carousel-content">
-                  <img
-                    className="project-carousel-image-web"
-                    src={`/projects/${project.title}/web/${image.pathName}.png`}
-                    alt={image.pathName}
-                  />
-                </div>
-              ))}
-            </Slider>
-          </Carousel>
-        </>
+        <Carousel>
+          <Slider {...settingsGlobal}>
+            {project?.images!.web.map((image) => (
+              <ProjectImageWeb
+                key={image.id}
+                src={`/projects/${project.title}/web/${image.pathName}.png`}
+                alt={image.pathName}
+              />
+            ))}
+          </Slider>
+        </Carousel>
       ) : null}
 
       {projects[parseInt(params.id) - 1].platform.some(
         (item) => item.title === 'mobile'
       ) ? (
-        <>
-          <Platform mobile>
-            <h2 className="project-platform-title">
-              mobile - {project?.images?.mobile.length} imagens
-            </h2>
-          </Platform>
-
-          <Carousel mobile>
-            <Slider {...settingsMobile}>
-              {project?.images!.mobile.map((image) => (
-                <div key={image.id} className="project-carousel-content">
-                  <img
-                    className="project-carousel-image-mobile"
-                    src={`/projects/${project.title}/mobile/${image.pathName}.png`}
-                    alt={image.pathName}
-                  />
-                </div>
-              ))}
-            </Slider>
-          </Carousel>
-        </>
+        <Carousel>
+          <Slider {...settingsGlobal}>
+            {project?.images!.mobile.map((image) => (
+              <ProjectImageMobile
+                key={image.id}
+                src={`/projects/${project.title}/mobile/${image.pathName}.png`}
+                alt={image.pathName}
+              />
+            ))}
+          </Slider>
+        </Carousel>
       ) : null}
 
       <Separator />
 
-      <h2 className="project-subtitle">Sobre</h2>
-      <p className="project-description">{project?.description}</p>
+      <ProjectSubTitle>Sobre</ProjectSubTitle>
+      <ProjectDescription>{project?.description}</ProjectDescription>
 
       <Separator />
 
-      <h2 className="project-subtitle">Tecnologias utilizadas</h2>
-      <div className="project-techs">
+      <ProjectSubTitle>Tecnologias utilizadas</ProjectSubTitle>
+      <ProjectTechs>
         {project?.stacks.map((stack) => (
-          <StackTag key={stack.id} title={stack.title} color={stack.color} />
+          <StackTag key={stack.id} pathName={`/${stack.pathName}`} />
         ))}
-      </div>
+      </ProjectTechs>
 
       <Separator />
 
-      <h2 className="project-subtitle">Protótipo</h2>
-      <a
-        className="project-link"
+      <ProjectSubTitle>Protótipo</ProjectSubTitle>
+      <ProjectLink
         href={project?.figma}
         target="_blank"
         rel="noopener noreferrer"
       >
         {project?.title} - Figma
-      </a>
+      </ProjectLink>
 
       <Separator />
 
-      <h2 className="project-subtitle">Código da aplicação</h2>
-      <a
-        className="project-link"
+      <ProjectSubTitle>Código da aplicação</ProjectSubTitle>
+      <ProjectLink
         href={project?.github}
         target="_blank"
         rel="noopener noreferrer"
       >
         {project?.title} - GitHub
-      </a>
+      </ProjectLink>
 
       <Footer />
-    </ProjectContainer>
+    </Container>
   );
 };
 

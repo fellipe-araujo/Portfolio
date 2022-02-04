@@ -2,16 +2,11 @@ import { StackTagContainer } from './styles';
 
 interface StackTagProps {
   id?: number;
-  title: string;
-  color: string;
+  pathName: string;
 }
 
-const StackTag = ({ id, title, color }: StackTagProps) => {
-  return (
-    <StackTagContainer color={color}>
-      <h1 className="stack-title">{title}</h1>
-    </StackTagContainer>
-  );
+const StackTag = ({ id, pathName }: StackTagProps) => {
+  return <StackTagContainer src={pathName} />;
 };
 
 export default StackTag;

@@ -1,20 +1,23 @@
 import styled from 'styled-components';
 
-const SocialMediasContainer = styled.div`
-  .reach-me-icon {
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .reach-me-icon:nth-child(n + 2) {
-    margin-left: 2rem;
-  }
-
+export const Container = styled.div`
   @media screen and (max-width: 767px) {
-    > a svg {
+    > svg {
       width: 2rem;
     }
   }
 `;
 
-export { SocialMediasContainer };
+export const SocialMediaLink = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.main};
+  cursor: pointer;
+
+  &:nth-child(n + 2) {
+    margin-left: 2rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 2rem;
+  }
+`;
