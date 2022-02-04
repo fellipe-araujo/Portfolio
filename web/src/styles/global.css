@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  font-family: "Play", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -14,9 +14,13 @@ html {
 
 body {
   font-size: 1.6rem;
-  background: #0e1524;
+  background: #121214;
   color: #fff;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p {
+  font-weight: 300;
 }
